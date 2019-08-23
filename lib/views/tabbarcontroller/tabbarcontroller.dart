@@ -34,16 +34,16 @@ class _TabbarControllerState extends State<TabbarController> {
 
     _tabImages = [
       [
-        loadAssetImage("home/2.0x/icon_home_n"),
-        loadAssetImage("home/2.0x/icon_home_s"),
+        loadAssetImage("home/2.0x/icon_home_n",width: 24.0,height: 24.0),
+        loadAssetImage("home/2.0x/icon_home_s",width: 24.0,height: 24.0),
       ],
       [
-        loadAssetImage("mycourise/2.0x/icon_minecourse_n"),
-        loadAssetImage("mycourise/2.0x/icon_minecourse_s"),
+        loadAssetImage("mycourise/2.0x/icon_minecourse_n",width: 24.0,height: 24.0),
+        loadAssetImage("mycourise/2.0x/icon_minecourse_s",width: 24.0,height: 24.0),
       ],
       [
-        loadAssetImage("mine/2.0x/icon_mine_n"),
-        loadAssetImage("mine/2.0x/icon_mine_s"),
+        loadAssetImage("mine/2.0x/icon_mine_n",width: 24.0,height: 24.0),
+        loadAssetImage("mine/2.0x/icon_mine_s",width: 24.0,height: 24.0),
       ],
     ];
   }
@@ -90,9 +90,9 @@ class _TabbarControllerState extends State<TabbarController> {
             currentIndex: _tabIndex,
             elevation: 5.0,
             iconSize: 21.0,
-            selectedFontSize: Dimens.font_sp16,
-            unselectedFontSize: Dimens.font_sp16,
-            selectedItemColor: Colours.app_main,
+            selectedFontSize: Dimens.font_sp14,
+            unselectedFontSize: Dimens.font_sp14,
+            selectedItemColor: Color(0xFF333333),
             unselectedItemColor: Color(0xffbfbfbf),
             onTap: (index) {
               _pageController.jumpToPage(index);

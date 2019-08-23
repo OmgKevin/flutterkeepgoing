@@ -7,7 +7,6 @@ import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/util/shared_util.dart';
 import 'package:flutterkeepgoing/util/utils.dart';
-import 'package:flutterkeepgoing/views/homepage/home_router.dart';
 import 'package:flutterkeepgoing/views/tabbarcontroller/tabbar_router.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -40,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void _initSplash() {
     _subscription =
-        Observable.just(1).delay(Duration(milliseconds: 3000)).listen((_) {
+        Observable.just(1).delay(Duration(milliseconds: 2000)).listen((_) {
       _initAsync();
     });
   }

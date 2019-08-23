@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutterkeepgoing/routers/application.dart';
 import 'package:flutterkeepgoing/routers/routers.dart';
 import 'package:flutterkeepgoing/views/splashpage/splash_page.dart';
-import 'package:flutterkeepgoing/views/tabbarcontroller/tabbarcontroller.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'common/colors.dart';
