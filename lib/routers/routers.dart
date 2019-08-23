@@ -5,6 +5,8 @@ import 'package:flutterkeepgoing/common/404.dart';
 import 'package:flutterkeepgoing/common/webview_page.dart';
 import 'package:flutterkeepgoing/routers/router_init.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
+import 'package:flutterkeepgoing/views/homepage/home_router.dart';
+import 'package:flutterkeepgoing/views/tabbarcontroller/tabbar_router.dart';
 
 class Routes {
 
@@ -22,7 +24,7 @@ class Routes {
       });
 
     router.define(home, handler: Handler(
-      handlerFunc: (BuildContext context, Map<String, List<String>> params) => MyHomePage()));
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) => HomePage()));
     
     router.define(webViewPage, handler: Handler(handlerFunc: (_, params){
       String title = params['title']?.first;
@@ -32,14 +34,8 @@ class Routes {
     
     _listRouter.clear();
     /// 各自路由由各自模块管理，统一在此添加初始化
-    // _listRouter.add(ShopRouter());
-    // _listRouter.add(LoginRouter());
-    // _listRouter.add(GoodsRouter());
-    // _listRouter.add(OrderRouter());
-    // _listRouter.add(StoreRouter());
-    // _listRouter.add(AccountRouter());
-    // _listRouter.add(SettingRouter());
-    // _listRouter.add(StatisticsRouter());
+    _listRouter.add(TabbarRouter());
+    _listRouter.add(HomePageRouter());
   
     /// 初始化路由
     _listRouter.forEach((routerProvider){

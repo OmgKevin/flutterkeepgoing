@@ -1,17 +1,54 @@
-import 'package:flutter/material.dart';
-import 'package:flutterkeepgoing/views/homepage/home_page.dart';
+import 'dart:io';
 
-void main() => runApp(MyApp());
+import 'package:fluro/fluro.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutterkeepgoing/routers/application.dart';
+import 'package:flutterkeepgoing/routers/routers.dart';
+import 'package:flutterkeepgoing/views/splashpage/splash_page.dart';
+import 'package:flutterkeepgoing/views/tabbarcontroller/tabbarcontroller.dart';
+import 'package:oktoast/oktoast.dart';
+
+import 'common/colors.dart';
+
+
+void main() {
+
+ runApp(MyApp());
+  // 透明状态栏
+  if (Platform.isAndroid) {
+    SystemUiOverlayStyle systemUiOverlayStyle =SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }
+} 
+
+
 
 class MyApp extends StatelessWidget {
+  
+  MyApp()  {
+    final router = Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+  }
+  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return OKToast(
+      child: MaterialApp(
+        title: 'Flutter Keep Going',
+        // debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Colours.app_main,
+          scaffoldBackgroundColor: Colors.white,
+        ),
+        home: SplashPage(),
+        onGenerateRoute: Application.router.generator,  
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      backgroundColor: Colors.black54,
+      textPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+      radius: 20.0,
+      position: ToastPosition.bottom
     );
   }
 }
