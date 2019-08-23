@@ -3,7 +3,9 @@ import 'package:flutterkeepgoing/common/colors.dart';
 import 'package:flutterkeepgoing/common/dimens.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/util/toast.dart';
+import 'package:flutterkeepgoing/views/homepage/home_of_banner_widget.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
+import 'package:flutterkeepgoing/views/loginpage/login_page.dart';
 import 'package:flutterkeepgoing/views/minepage/mine_page.dart';
 import 'package:flutterkeepgoing/views/mycourisepage/mycourise_page.dart';
 

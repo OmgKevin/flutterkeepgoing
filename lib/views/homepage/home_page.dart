@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
+import 'package:flutterkeepgoing/views/homepage/home_of_banner_widget.dart';
+import 'package:flutterkeepgoing/views/homepage/home_of_openclass_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -14,7 +16,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
  
   @override
   bool get wantKeepAlive => true; 
- 
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -23,9 +25,14 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         centerTitle: "IEA认证",
         isBack: false,
       ),
-      body: Center(
-         child: Text('首页'),
-      ),
+      body: ListView(
+        // shrinkWrap: true,
+        children: <Widget>[
+          HomeOfBannerWidget(),
+          HomeOfOpenClassWidget(),
+          
+        ],
+      )
     );
   }
 }

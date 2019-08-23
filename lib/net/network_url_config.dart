@@ -6,16 +6,12 @@ class NetworkConfig {
   static final isProd = ApiConfig.isProd;
   static final authKey = ApiConfig.authKey;
 
- static final Map<String, String> indexPageApi = {
+ static final Map<String, String> homePageApi = {
     'getIndexBanner': hostUrl + 'index/getIndexBanner',
     'indexMenuClassList': hostUrl + 'index/indexMenuClass/list',
     'openClassList': hostUrl + 'index/openClass/list',
   };
   
-  static final Map<String, String> homePageApi = {
-    'getOpenClassTypeList': hostUrl + 'index/project',
-    'openClassList': hostUrl + 'index/openClass',
-  };
 
   static final Map<String, String> minePageApi = {
     'getOpenClassTypeList': hostUrl + 'index/project',

@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
+import 'package:flutterkeepgoing/views/loginpage/login_page.dart';
+import 'package:keyboard_actions/keyboard_actions.dart';
 
 class MineCourisePage extends StatefulWidget {
   MineCourisePage({Key key}) : super(key: key);
