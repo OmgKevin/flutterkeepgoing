@@ -41,10 +41,8 @@ class _TabbarControllerState extends State<TabbarController> {
         loadAssetImage("home/2.0x/icon_home_s", width: 24.0, height: 24.0),
       ],
       [
-        loadAssetImage("mycourise/2.0x/icon_minecourse_n",
-            width: 24.0, height: 24.0),
-        loadAssetImage("mycourise/2.0x/icon_minecourse_s",
-            width: 24.0, height: 24.0),
+        loadAssetImage("mycourise/2.0x/icon_minecourse_n",width: 24.0, height: 24.0),
+        loadAssetImage("mycourise/2.0x/icon_minecourse_s",width: 24.0, height: 24.0),
       ],
       [
         loadAssetImage("mine/2.0x/icon_mine_n", width: 24.0, height: 24.0),

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/blocs/minecourse_bloc.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
 import 'package:flutterkeepgoing/common/flutter_channel_plugin.dart';
+import 'package:flutterkeepgoing/common/key_config.dart';
 import 'package:flutterkeepgoing/models/minecourse_model.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
+import 'package:flutterkeepgoing/util/shared_util.dart';
 import 'package:flutterkeepgoing/views/minecoursepage/minecourse_listitem.dart';
 import 'package:flutterkeepgoing/widgets/loading.dart';
 
@@ -27,13 +29,20 @@ class _MineCoursePageState extends State<MineCoursePage>
   MineCourseListBloc _bloc = new MineCourseListBloc();
   FlutterChannelPlugin eventchannel = new FlutterChannelPlugin();
   List<PurchasedCourse> mineCourseList = [];
-  String userid = '60';
+  String userid = '468';
 
   @override
   void initState() {
     super.initState();
 
-    _getList();
+
+       String userauthorization = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdW5MYW5kIiwiYXVkIjoiMTc2MjAzNTYzMDMiLCJpYXQiOjE1NjY1NDQ3NzUsInN1YiI6IjE3NjIwMzU2MzAzLVtdIiwiZXhwIjoxNTY2NTQ0Nzc1fQ.yKMze98cSR-r5JXfoyAm2zI2Jz1KaEi8P5wFwWmSrT4';
+       String usera = 'MTc2MjAzNTYzMDM=';
+
+       SharedUtil.instance.saveString(Keys.authorization, userauthorization);
+       SharedUtil.instance.saveString(Keys.a, usera);
+
+       _getList();
 
     WidgetsBinding.instance.addObserver(this);
   }
