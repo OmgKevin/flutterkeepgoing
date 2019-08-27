@@ -98,7 +98,7 @@ class _HomeOfBannerWidgetState extends State<HomeOfBannerWidget>{
               } else {
                 return GestureDetector(
                   onTap: () {
-                    print('banner');
+                    // print('banner');
                     if (indexBannerList[0].linkType == 1) {
                       toWebview(
                         indexBannerList[0].linkUrl,

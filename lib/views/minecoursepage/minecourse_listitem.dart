@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/models/minecourse_model.dart';
 
@@ -38,35 +39,33 @@ class _MineCourseListItemState extends State<MineCourseListItem> {
                       children: <Widget>[
                         Container(
                           constraints: BoxConstraints.tight(Size(145, 81)),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              image: DecorationImage(
-                                  image: widget.map.isCourse == 2? NetworkImage(widget.map.cover): NetworkImage(widget.map.cover),
-                                  fit: BoxFit.cover)
-                                  ),
+                          child: ExtendedImage.network(
+                              widget.map.isCourse == 2
+                                  ? widget.map.cover
+                                  : widget.map.cover,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5.0)),
+                              cache: true,
+                              enableLoadState: false,
+                              fit: BoxFit.cover),
                         ),
                         Container(
                           height: 22,
                           // width: 78,
                           margin: EdgeInsets.only(top: 7),
-                          // color: Colors.blue,
                           decoration: BoxDecoration(
-                              // color: true? Color.fromRGBO(243, 110, 34, 0.96): Color.fromRGBO(213, 213, 213, 1),
                               color: Color.fromRGBO(243, 110, 34, 0.96),
                               borderRadius: BorderRadius.only(
                                   topRight: Radius.circular(11),
                                   bottomRight: Radius.circular(11))),
                           child: Container(
-                            // constraints: BoxConstraints(maxWidth: 90,minWidth: 0),
                             padding: const EdgeInsets.only(left: 10, right: 10),
                             child: Center(
                               child: widget.map.isCourse == 2
-                                  ? Text(
-                                      widget.map.proName,
+                                  ? Text('${widget.map.proName}',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 12),
-                                    )
-                                  : Text(
+                                    ): Text(
                                       '公开课',
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 12),
@@ -87,8 +86,8 @@ class _MineCourseListItemState extends State<MineCourseListItem> {
                           children: <Widget>[
                             Text(
                               widget.map.isCourse == 2
-                                  ? widget.map.goName
-                                  : widget.map.ocName,
+                                  ? '${widget.map.goName}'
+                                  : '${widget.map.ocName}',
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
@@ -107,7 +106,7 @@ class _MineCourseListItemState extends State<MineCourseListItem> {
                                     width: 110,
                                     child: widget.map.isCourse != 2
                                         ? Text(
-                                            widget.map.tname,
+                                            '${widget.map.tname}',
                                             style: TextStyle(
                                               fontSize: 14,
                                             ),
@@ -115,7 +114,7 @@ class _MineCourseListItemState extends State<MineCourseListItem> {
                                             overflow: TextOverflow.ellipsis,
                                           )
                                         : Text(
-                                            '共' + widget.map.lessionCount + '节',
+                                            '共' + '${widget.map.lessionCount}' + '节',
                                             style: TextStyle(
                                               fontSize: 14,
                                             ),
@@ -154,4 +153,6 @@ Widget hasTeacher(bool hasTeacher, String avatarUrl) {
 }
 
 void showNativeView(int isCourse, String coId, String goId) {
+
 }
+

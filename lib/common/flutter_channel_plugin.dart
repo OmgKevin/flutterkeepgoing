@@ -20,8 +20,8 @@ class FlutterChannelPlugin {
 
   void _onEvent(Object event) {
     mResult = event.toString();
-    print('---------event----------');
-    print(event);
+    // print('---------event----------');
+    // print(event);
     if (mFunction != null) {
       mFunction(event);
     }
@@ -30,8 +30,8 @@ class FlutterChannelPlugin {
 
   void _onError(Object error) {
     mResult = error.toString();
-    print('---------error----------');
-    print(error);
+    // print('---------error----------');
+    // print(error);
     if (mFunction != null) {
       mFunction(error);
     }

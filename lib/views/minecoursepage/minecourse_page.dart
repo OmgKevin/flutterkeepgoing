@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/blocs/minecourse_bloc.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
-import 'package:flutterkeepgoing/common/flutter_channel_plugin.dart';
 import 'package:flutterkeepgoing/common/key_config.dart';
 import 'package:flutterkeepgoing/models/minecourse_model.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
@@ -13,9 +12,7 @@ class MineCoursePage extends StatefulWidget {
   MineCoursePage({Key key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    return _MineCoursePageState();
-  }
+  _MineCoursePageState  createState() => _MineCoursePageState();
 }
 
 class _MineCoursePageState extends State<MineCoursePage>
@@ -27,7 +24,6 @@ class _MineCoursePageState extends State<MineCoursePage>
   bool get wantKeepAlive => true;
 
   MineCourseListBloc _bloc = new MineCourseListBloc();
-  FlutterChannelPlugin eventchannel = new FlutterChannelPlugin();
   List<PurchasedCourse> mineCourseList = [];
   String userid = '468';
 
@@ -36,7 +32,7 @@ class _MineCoursePageState extends State<MineCoursePage>
     super.initState();
 
 
-       String userauthorization = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdW5MYW5kIiwiYXVkIjoiMTc2MjAzNTYzMDMiLCJpYXQiOjE1NjY1NDQ3NzUsInN1YiI6IjE3NjIwMzU2MzAzLVtdIiwiZXhwIjoxNTY2NTQ0Nzc1fQ.yKMze98cSR-r5JXfoyAm2zI2Jz1KaEi8P5wFwWmSrT4';
+       String userauthorization = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdW5MYW5kIiwiYXVkIjoiMTc2MjAzNTYzMDMiLCJpYXQiOjE1NjY4ODI5OTIsInN1YiI6IjE3NjIwMzU2MzAzLVtdIiwiZXhwIjoxNTY2ODgyOTkyfQ.JRWWRF1x7GI3HVqbd_vdKcJx1UlFlD3Srf4eLqGzzKE';
        String usera = 'MTc2MjAzNTYzMDM=';
 
        SharedUtil.instance.saveString(Keys.authorization, userauthorization);
@@ -105,6 +101,10 @@ class _MineCoursePageState extends State<MineCoursePage>
               );
             } else {
               return Scaffold(
+                appBar: MyAppBar(
+                      centerTitle: "我的课程",
+                      isBack: false,
+                    ),
                   body: RefreshIndicator(
                 onRefresh: _refresh,
                 child: Container(

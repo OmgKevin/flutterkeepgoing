@@ -29,7 +29,7 @@ class ErrorPage extends StatelessWidget {
               child:
                 RaisedButton(
                 onPressed: (){
-                  print('error-onPressed');
+                  // print('error-onPressed');
                   this.errorCallback();
                 },
                 color: Color(0xFFffffff),//按钮的背景颜色

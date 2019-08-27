@@ -19,7 +19,7 @@ class Routes {
     /// 指定路由跳转错误返回页
     router.notFoundHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-        debugPrint("未找到目标页");
+        // debugPrint("未找到目标页");
         return WidgetNotFound();
       });
 

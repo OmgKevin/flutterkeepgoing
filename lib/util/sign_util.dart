@@ -25,13 +25,13 @@ class HttpUtil {
       }
       return 0;
     });
-    print(list.toString());
+    // print(list.toString());
     StringBuffer buffer = new StringBuffer();
     for (String temp in list) {
       buffer.write(temp);
     }
     String sign = buffer.toString().substring(0, buffer.toString().length - 1);
-    print(sign);
+    // print(sign);
     return generateMd5(sign);
   }
 

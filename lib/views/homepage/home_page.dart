@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         isBack: false,
       ),
       body: ListView(
-        // shrinkWrap: true,
+        shrinkWrap: true,
         children: <Widget>[
           HomeOfBannerWidget(),
           HomeOfOpenClassWidget(),
