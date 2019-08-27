@@ -11,7 +11,7 @@ class HomeOfBannerBloc {
   Stream<BaseResp> get homeOfBannerStream => _homeOfBannerController.stream;
 
 
-  void getIndexBannerList(params) {
+  void getHomeOfBannerList(params) {
     _homeOfBannerSubscription?.cancel();
     _homeOfBannerSubscription = _apiClient
         .getHomeOfBannerData(params)

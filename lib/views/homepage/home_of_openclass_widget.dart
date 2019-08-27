@@ -17,7 +17,7 @@ class _HomeOfOpenClassWidgetState extends State<HomeOfOpenClassWidget> {
 
   _getIndexBanner() {
     Map<String, String> params = {'type': '1'};
-    _bloc.getopenClassList(params);
+    _bloc.getHomeOfOpenClassList(params);
   }
 
   @override
@@ -54,8 +54,7 @@ class _HomeOfOpenClassWidgetState extends State<HomeOfOpenClassWidget> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                  },
+                  onTap: () {},
                   child: Padding(
                     padding:
                         EdgeInsets.only(top: 14.0, left: 17.0, right: 17.0),

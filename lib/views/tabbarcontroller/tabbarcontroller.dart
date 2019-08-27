@@ -6,8 +6,9 @@ import 'package:flutterkeepgoing/util/toast.dart';
 import 'package:flutterkeepgoing/views/homepage/home_of_banner_widget.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
 import 'package:flutterkeepgoing/views/loginpage/login_page.dart';
+import 'package:flutterkeepgoing/views/minecoursepage/minecourse_page.dart';
 import 'package:flutterkeepgoing/views/minepage/mine_page.dart';
-import 'package:flutterkeepgoing/views/mycourisepage/mycourise_page.dart';
+
 
 class TabbarController extends StatefulWidget {
   @override
@@ -30,22 +31,24 @@ class _TabbarControllerState extends State<TabbarController> {
   void initData() {
     _pageList = [
       HomePage(),
-      MineCourisePage(),
+      MineCoursePage(),
       MinePage(),
     ];
 
     _tabImages = [
       [
-        loadAssetImage("home/2.0x/icon_home_n",width: 24.0,height: 24.0),
-        loadAssetImage("home/2.0x/icon_home_s",width: 24.0,height: 24.0),
+        loadAssetImage("home/2.0x/icon_home_n", width: 24.0, height: 24.0),
+        loadAssetImage("home/2.0x/icon_home_s", width: 24.0, height: 24.0),
       ],
       [
-        loadAssetImage("mycourise/2.0x/icon_minecourse_n",width: 24.0,height: 24.0),
-        loadAssetImage("mycourise/2.0x/icon_minecourse_s",width: 24.0,height: 24.0),
+        loadAssetImage("mycourise/2.0x/icon_minecourse_n",
+            width: 24.0, height: 24.0),
+        loadAssetImage("mycourise/2.0x/icon_minecourse_s",
+            width: 24.0, height: 24.0),
       ],
       [
-        loadAssetImage("mine/2.0x/icon_mine_n",width: 24.0,height: 24.0),
-        loadAssetImage("mine/2.0x/icon_mine_s",width: 24.0,height: 24.0),
+        loadAssetImage("mine/2.0x/icon_mine_n", width: 24.0, height: 24.0),
+        loadAssetImage("mine/2.0x/icon_mine_s", width: 24.0, height: 24.0),
       ],
     ];
   }

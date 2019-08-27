@@ -12,11 +12,7 @@ class HomeOfOpenClassBloc {
   final StreamController<BaseResp> _homeOfOpenClassController = StreamController<BaseResp>.broadcast();
   Stream<BaseResp> get homeOfOpenClassStream => _homeOfOpenClassController.stream;
 
-  /*
-  *  获取公开课类型列表
-  * @links
-  */
-  void getopenClassList(params) {
+  void getHomeOfOpenClassList(params) {
     _homeOfOpenClassSubscription?.cancel();
     _homeOfOpenClassSubscription = _apiClient
         .getHomeOfOpenClassData(params)

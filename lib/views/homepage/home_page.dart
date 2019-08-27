@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
 import 'package:flutterkeepgoing/views/homepage/home_of_banner_widget.dart';
+import 'package:flutterkeepgoing/views/homepage/home_of_ieaclass_widget.dart';
 import 'package:flutterkeepgoing/views/homepage/home_of_openclass_widget.dart';
+import 'package:flutterkeepgoing/views/homepage/home_of_openclasslist_widget.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-  final String title;
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -30,7 +30,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         children: <Widget>[
           HomeOfBannerWidget(),
           HomeOfOpenClassWidget(),
-          
+          HomeOfOpenClassListWidget(),
+          HomeOfIEAClassWidget(),
         ],
       )
     );

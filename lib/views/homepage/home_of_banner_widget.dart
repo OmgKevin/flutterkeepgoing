@@ -8,7 +8,7 @@ import 'package:flutterkeepgoing/util/screen_util.dart';
 import 'package:flutterkeepgoing/widgets/loading.dart';
 
 class HomeOfBannerWidget extends StatefulWidget {
-  
+
   @override
   _HomeOfBannerWidgetState createState() => _HomeOfBannerWidgetState();
 }
@@ -21,7 +21,7 @@ class _HomeOfBannerWidgetState extends State<HomeOfBannerWidget>{
 
   _getIndexBanner() {
     Map<String, String> params = {'type': '1'};
-    _bloc.getIndexBannerList(params);
+    _bloc.getHomeOfBannerList(params);
   }
 
   @override

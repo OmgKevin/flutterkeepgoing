@@ -100,3 +100,59 @@ class HomeOfOpenClassModel {
     };
 }
 
+/////////////////
+class HomeOfIEAClassModel {
+    int id;
+    String bannerUrl;
+    String goId;
+    String goName;
+    String price;
+    dynamic discountPrice;
+    String gdCover;
+    String pageUrl;
+    String h5Url;
+    String linkType;
+    String isDiscount;
+
+    HomeOfIEAClassModel({
+        this.id,
+        this.bannerUrl,
+        this.goId,
+        this.goName,
+        this.price,
+        this.discountPrice,
+        this.gdCover,
+        this.pageUrl,
+        this.h5Url,
+        this.linkType,
+        this.isDiscount,
+    });
+
+    factory HomeOfIEAClassModel.fromJson(Map<String, dynamic> json) => new HomeOfIEAClassModel(
+        id: json["id"],
+        bannerUrl: json["bannerUrl"],
+        goId: json["goId"],
+        goName: json["goName"],
+        price: json["price"],
+        discountPrice: json["discountPrice"],
+        gdCover: json["gdCover"],
+        pageUrl: json["pageUrl"],
+        h5Url: json["h5Url"],
+        linkType: json["linkType"],
+        isDiscount: json["isDiscount"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id": id,
+        "bannerUrl": bannerUrl,
+        "goId": goId,
+        "goName": goName,
+        "price": price,
+        "discountPrice": discountPrice,
+        "gdCover": gdCover,
+        "pageUrl": pageUrl,
+        "h5Url": h5Url,
+        "linkType": linkType,
+        "isDiscount": isDiscount,
+    };
+}

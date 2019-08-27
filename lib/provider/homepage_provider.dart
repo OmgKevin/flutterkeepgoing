@@ -17,6 +17,11 @@ class HomePageProvider extends BaseApiProvider {
     return super.verifyMiddleWare(response);
   }
  
- 
+   // IEA认证项目
+  Future<BaseResp> getHomeOfIEAClassData(Map<String, dynamic> params) async {
+    final response = await get(NetworkConfig.homePageApi['indexMenuClassList'], params);
+    return super.verifyMiddleWare(response);
+  }
+
 
 }

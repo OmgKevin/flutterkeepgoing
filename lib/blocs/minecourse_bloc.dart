@@ -7,7 +7,7 @@ import 'package:flutterkeepgoing/provider/minecourse_provider.dart';
 class MineCourseListBloc {
 
   // 初始化请求方法
-  final provider = MineCoursePageApiProvider();
+  final provider = MineCoursePageProvider();
 
    /*
    * 数据流取数据 3 部曲
@@ -18,14 +18,13 @@ class MineCourseListBloc {
   // 监听数据流
   final StreamController<BaseResp> _mineCourseController = StreamController<BaseResp>.broadcast();
   // 用流返回的数据
-  Stream<BaseResp> get mineCourseList => _mineCourseController.stream;
+  Stream<BaseResp> get mineCourseStream => _mineCourseController.stream;
 
 
 
   void getList (params) {
     // 数据异常 => cancel
     _mineCourseListSubcrition?.cancel();
-
     _mineCourseListSubcrition = provider.getList(params).asStream().listen((BaseResp data) {
       if (data.result) {
         data.data = MineCourseModel.fromJson(data.data);
