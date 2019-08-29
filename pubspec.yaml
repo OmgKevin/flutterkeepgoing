@@ -41,7 +41,11 @@ dependencies:
   url_launcher: 5.1.2
   # 处理键盘事件 https://github.com/diegoveloper/flutter_keyboard_actions
   keyboard_actions: ^2.1.1+1
-  loading: ^1.0.1
+  # 图片缓存本地相册 https://pub.dev/packages/image_picker_saver#-installing-tab-
+  image_picker_saver: ^0.3.0
+  # 图片裁切 https://pub.dev/packages/image_cropper#-installing-tab-
+  image_cropper: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +67,7 @@ flutter:
     - assets/images/mycourise/2.0x/
     - assets/images/mine/
     - assets/images/mine/2.0x/
+    - assets/images/mine/3.0x/
 
     
 

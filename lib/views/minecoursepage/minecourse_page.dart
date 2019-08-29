@@ -7,6 +7,7 @@ import 'package:flutterkeepgoing/net/base_response.dart';
 import 'package:flutterkeepgoing/util/shared_util.dart';
 import 'package:flutterkeepgoing/views/minecoursepage/minecourse_listitem.dart';
 import 'package:flutterkeepgoing/widgets/loading.dart';
+import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
 
 class MineCoursePage extends StatefulWidget {
   MineCoursePage({Key key}) : super(key: key);
@@ -124,13 +125,14 @@ class _MineCoursePageState extends State<MineCoursePage>
               ));
             }
           } else {
-            return LoadingPage();
+            // return LoadingPage();
+            return ProgressDialog(hintText: "正在加载...");
           }
         } else {
-          return LoadingPage();
+          // return LoadingPage();
+           return ProgressDialog(hintText: "正在加载...");
         }
       },
     );
-    // return
   }
 }

@@ -1,9 +1,11 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:common_utils/common_utils.dart';
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutterkeepgoing/util/utils.dart';
+import 'package:image_picker_saver/image_picker_saver.dart';
 
 /// 加载本地资源图片
 Widget loadAssetImage(String name, {double width, double height, BoxFit fit}){
@@ -37,9 +39,15 @@ ImageProvider getImageProvider(String imageUrl, {String holderImg: "none"}){
   return CachedNetworkImageProvider(imageUrl);
 }
 
+// 保存网络图片到本地相册
+Future<bool> saveNetworkImageToPhoto(String url, {bool useCache: true}) async {
+  var data = await getNetworkImageData(url, useCache: useCache);
+  var filePath = await ImagePickerSaver.saveFile(fileData: data);
+  return filePath != null && filePath != "";
+}
 
 
-
+// 圆角图片
 class SetRoundImage extends StatelessWidget {
 
   const SetRoundImage({

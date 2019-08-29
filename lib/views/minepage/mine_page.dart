@@ -1,9 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
+import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -13,10 +16,43 @@ class MinePage extends StatefulWidget {
 class _MinePageState extends State<MinePage>
     with
         AutomaticKeepAliveClientMixin<MinePage>,
-        SingleTickerProviderStateMixin {
+        SingleTickerProviderStateMixin,
+        WidgetsBindingObserver {
   @override
   bool get wantKeepAlive => true;
   File _imageFile;
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.inactive:
+        print('AppLifecycleState.inactive');
+        break;
+      case AppLifecycleState.paused:
+        print('AppLifecycleState.paused');
+        break;
+      case AppLifecycleState.resumed:
+        print('AppLifecycleState.resumed');
+        break;
+      case AppLifecycleState.suspending:
+        print('AppLifecycleState.suspending');
+        break;
+    }
+    super.didChangeAppLifecycleState(state);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +81,24 @@ class _MinePageState extends State<MinePage>
                 ),
               ),
               Positioned(
-                top: 50,
-                left: 70.0,
-                right: 20.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    loadAssetImage("mine/3.0x/weixin", width: 20, height: 20),
-                    Text("客服",
-                        style: TextStyle(color: Colors.white, fontSize: 15.0)),
-                  ],
-                ),
-              )
+                  top: 50.0,
+                  left: 70.0,
+                  right: 20.0,
+                  child: GestureDetector(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        loadAssetImage("mine/3.0x/weixin",
+                            width: 20, height: 20),
+                        Text("客服",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15.0)),
+                      ],
+                    ),
+                    onTap: () {
+                      _showUserProtocol();
+                    },
+                  ))
             ],
           ),
         ),
@@ -74,4 +116,26 @@ class _MinePageState extends State<MinePage>
       ],
     ));
   }
+
+  _showUserProtocol() {
+    showDialog<Null>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return CustomerServiceDialog(onCloseEvent: () {
+          Navigator.of(context).pop();
+        });
+      },
+    ).then((val) {});
+  }
+}
+
+Future<Null> _cropImage(File imageFile) async {
+  File croppedFile = await ImageCropper.cropImage(
+    sourcePath: imageFile.path,
+    ratioX: 1.0,
+    ratioY: 1.0,
+    maxWidth: 512,
+    maxHeight: 512,
+  );
 }
