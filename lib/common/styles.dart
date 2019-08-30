@@ -16,7 +16,7 @@ class TextStyles {
     fontSize: Dimens.font_sp12,
     color: Colours.text_normal,
   );
-    static const TextStyle textNormal16 = TextStyle(
+  static const TextStyle textNormal16 = TextStyle(
     fontSize: Dimens.font_sp16,
     color: Colours.text_normal,
   );
@@ -35,28 +35,19 @@ class TextStyles {
   static const TextStyle textBoldDark14 = TextStyle(
       fontSize: Dimens.font_sp14,
       color: Colours.text_dark,
-      fontWeight: FontWeight.bold
-  );
+      fontWeight: FontWeight.bold);
   static const TextStyle textBoldDark16 = TextStyle(
       fontSize: Dimens.font_sp16,
       color: Colours.text_dark,
-      fontWeight: FontWeight.bold
-  );
+      fontWeight: FontWeight.bold);
   static const TextStyle textBoldDark18 = TextStyle(
-    fontSize: Dimens.font_sp18,
-    color: Colours.text_dark,
-    fontWeight: FontWeight.bold
-  );
+      fontSize: Dimens.font_sp18,
+      color: Colours.text_dark,
+      fontWeight: FontWeight.bold);
   static const TextStyle textBoldDark24 = TextStyle(
-      fontSize: 24.0,
-      color: Colours.text_dark,
-      fontWeight: FontWeight.bold
-  );
+      fontSize: 24.0, color: Colours.text_dark, fontWeight: FontWeight.bold);
   static const TextStyle textBoldDark26 = TextStyle(
-      fontSize: 26.0,
-      color: Colours.text_dark,
-      fontWeight: FontWeight.bold
-  );
+      fontSize: 26.0, color: Colours.text_dark, fontWeight: FontWeight.bold);
   static const TextStyle textGray10 = TextStyle(
     fontSize: Dimens.font_sp10,
     color: Colours.text_gray,
@@ -90,11 +81,15 @@ class Gaps {
   static const Widget hGap10 = SizedBox(width: Dimens.gap_dp10);
   static const Widget hGap15 = SizedBox(width: Dimens.gap_dp15);
   static const Widget hGap16 = SizedBox(width: Dimens.gap_dp16);
+
   /// 垂直间隔
   static const Widget vGap5 = SizedBox(height: Dimens.gap_dp5);
   static const Widget vGap10 = SizedBox(height: Dimens.gap_dp10);
   static const Widget vGap15 = SizedBox(height: Dimens.gap_dp15);
   static const Widget vGap50 = SizedBox(height: Dimens.gap_dp50);
+  static const Widget vGap100 = SizedBox(height: Dimens.gap_dp100);
+  static const Widget vGap200 = SizedBox(height: Dimens.gap_dp200);
+  static const Widget vGap500 = SizedBox(height: Dimens.gap_dp500);
 
   static const Widget vGap4 = SizedBox(height: 4.0);
   static const Widget vGap8 = SizedBox(height: 8.0);
@@ -104,7 +99,7 @@ class Gaps {
   static const Widget hGap4 = SizedBox(width: 4.0);
   static const Widget hGap8 = SizedBox(width: 8.0);
   static const Widget hGap12 = SizedBox(width: 12.0);
-  
+
   static Widget line = Container(height: 0.6, color: Colours.line);
   static const Widget empty = SizedBox();
 }

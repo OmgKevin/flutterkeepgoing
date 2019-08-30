@@ -3,10 +3,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
+import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
 import 'package:image_cropper/image_cropper.dart';
+
+import 'mine_router.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -106,7 +109,9 @@ class _MinePageState extends State<MinePage>
         ClickItem(
           title: "意见反馈",
           itemicon: 'mine/3.0x/yijian',
-          onTap: () {},
+          onTap: () {
+            NavigatorUtils.push(context, MinePageRouter.feedbackPage);
+          },
         ),
         ClickItem(
           title: "设置",
@@ -130,12 +135,4 @@ class _MinePageState extends State<MinePage>
   }
 }
 
-Future<Null> _cropImage(File imageFile) async {
-  File croppedFile = await ImageCropper.cropImage(
-    sourcePath: imageFile.path,
-    ratioX: 1.0,
-    ratioY: 1.0,
-    maxWidth: 512,
-    maxHeight: 512,
-  );
-}
+ 

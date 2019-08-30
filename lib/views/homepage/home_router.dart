@@ -12,5 +12,4 @@ class HomePageRouter implements IRouterProvider{
   void initRouter(Router router) {
     router.define(homePage, handler: Handler(handlerFunc: (_, params) => HomePage()));
   }
-  
 }

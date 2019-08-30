@@ -6,6 +6,7 @@ import 'package:flutterkeepgoing/common/webview_page.dart';
 import 'package:flutterkeepgoing/routers/router_init.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
 import 'package:flutterkeepgoing/views/homepage/home_router.dart';
+import 'package:flutterkeepgoing/views/minepage/mine_router.dart';
 import 'package:flutterkeepgoing/views/tabbarcontroller/tabbar_router.dart';
 
 class Routes {
@@ -36,6 +37,7 @@ class Routes {
     /// 各自路由由各自模块管理，统一在此添加初始化
     _listRouter.add(TabbarRouter());
     _listRouter.add(HomePageRouter());
+    _listRouter.add(MinePageRouter());
   
     /// 初始化路由
     _listRouter.forEach((routerProvider){
