@@ -73,7 +73,8 @@ class _MinePageState extends State<MinePage>
                     SetRoundImage(
                       image: _imageFile,
                       onTap: () {
-                        NavigatorUtils.push(context, MinePageRouter.accountInfoPage);
+                        NavigatorUtils.push(
+                            context, MinePageRouter.accountInfoPage);
                       },
                     ),
                     Gaps.vGap8,
@@ -100,7 +101,7 @@ class _MinePageState extends State<MinePage>
                       ],
                     ),
                     onTap: () {
-                      _showUserProtocol();
+                      _showServiceDialog();
                     },
                   ))
             ],
@@ -125,7 +126,7 @@ class _MinePageState extends State<MinePage>
     ));
   }
 
-  _showUserProtocol() {
+  _showServiceDialog() {
     showDialog<Null>(
       context: context,
       barrierDismissible: false,

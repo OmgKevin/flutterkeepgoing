@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
+import 'package:flutterkeepgoing/util/screen_util.dart';
 import 'package:oktoast/oktoast.dart';
 
 class ProgressDialog extends Dialog {
@@ -51,44 +52,46 @@ class CustomerServiceDialog extends Dialog {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
-            // margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-            margin: EdgeInsets.only(left: 50, right: 50, top: 100),
-            height: 350,
-
-            decoration: ShapeDecoration(
-              color: Color(0xffffffff),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(8.0),
+      alignment: Alignment.center,
+      child: AspectRatio( //尝试给子部件指定比例确认大小.
+        aspectRatio: 1.0 / 1.0,  //ratio = 宽 / 高 ,
+        child: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(left: 50, right: 50),
+              height: 335,
+              decoration: ShapeDecoration(
+                color: Color(0xffffffff),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8.0),
+                  ),
                 ),
               ),
+              child: Column(
+                children: <Widget>[
+                  _buildTitle(),
+                  Expanded(
+                    flex: 1,
+                    child: _buildContentWidget(),
+                  ),
+                  _buildButton(),
+                ],
+              ),
             ),
-            child: Column(
-              children: <Widget>[
-                _buildTitle(),
-                Expanded(
-                  flex: 1,
-                  child: _buildContentWidget(),
-                ),
-                _buildButton(),
-              ],
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 30),
-            alignment: Alignment.bottomCenter,
-            child: new GestureDetector(
-              child:
-                  loadAssetImage("mine/3.0x/closewhite", width: 20, height: 20),
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          )
-        ],
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              alignment: Alignment.bottomCenter,
+              child: new GestureDetector(
+                child: loadAssetImage("mine/3.0x/closewhite",
+                    width: 20, height: 20),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -129,7 +132,7 @@ class CustomerServiceDialog extends Dialog {
               children: <Widget>[
                 Text(
                   "马老师: ma18727263738",
-                  style: TextStyles.textNormal16,
+                  style: TextStyles.textNormal14,
                 ),
                 Container(
                   height: 20.0,
@@ -152,7 +155,7 @@ class CustomerServiceDialog extends Dialog {
             )),
         Padding(
           padding: EdgeInsets.only(bottom: 10),
-          child: loadAssetImage("WechatIMG2",width: 120,height: 120),
+          child: loadAssetImage("WechatIMG2", width: 120, height: 120),
         ),
         Text('保存图片到相册，打开微信扫一扫添加老师', style: TextStyles.textNormal12),
       ],
@@ -163,8 +166,8 @@ class CustomerServiceDialog extends Dialog {
     return GestureDetector(
         child: Container(
           alignment: Alignment.center,
-          width: 240,
-          height: 40,
+          width: 220,
+          height: 35,
           margin: EdgeInsets.fromLTRB(0, 15, 0, 15),
           decoration: ShapeDecoration(
             color: Color(0xffff6700),
