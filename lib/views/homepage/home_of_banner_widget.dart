@@ -4,6 +4,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutterkeepgoing/blocs/home_of_banner_bloc.dart';
 import 'package:flutterkeepgoing/models/homepage_model.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
+import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/screen_util.dart';
 import 'package:flutterkeepgoing/widgets/loading.dart';
 
@@ -68,12 +69,10 @@ class _HomeOfBannerWidgetState extends State<HomeOfBannerWidget>{
                             activeSize: 8.0),
                       ),
                       onTap: (index) {
+
                         if (indexBannerList[index].linkType == 1) {
-                          //传index.url 完整链接 ，true 为开启埋点统计 ，埋点ID ，bannertype类型为1代表跳转webview
-                          toWebview(
-                            indexBannerList[index].linkUrl,
-                            1,
-                          );
+                          //传index.url 完整链接 ，bannertype类型为1代表跳转webview
+                          NavigatorUtils.goWebViewPage(context, "webview", indexBannerList[index].linkUrl);
                         } else if (indexBannerList[index].linkType == 2) {
                           // String router = indexBannerList[index].router.split('?')[0];
                           String classtype = indexBannerList[index]

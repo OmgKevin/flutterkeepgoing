@@ -23,10 +23,7 @@ class Routes {
       return WidgetNotFound();
     });
 
-    router.define(home,
-        handler: Handler(
-            handlerFunc:
-                (BuildContext context, Map<String, List<String>> params) =>
+    router.define(home,handler: Handler(handlerFunc:(BuildContext context, Map<String, List<String>> params) =>
                     HomePage()));
 
     router.define(webViewPage, handler: Handler(handlerFunc: (_, params) {
