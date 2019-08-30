@@ -6,7 +6,6 @@ import 'package:flutterkeepgoing/routers/router_init.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
 import 'package:flutterkeepgoing/views/homepage/home_router.dart';
 import 'package:flutterkeepgoing/views/minepage/mine_router.dart';
-import 'package:flutterkeepgoing/views/minepage/settingpage/setting_page.dart';
 import 'package:flutterkeepgoing/views/tabbarcontroller/tabbar_router.dart';
 
 class Routes {

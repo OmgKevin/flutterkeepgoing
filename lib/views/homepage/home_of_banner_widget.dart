@@ -72,7 +72,7 @@ class _HomeOfBannerWidgetState extends State<HomeOfBannerWidget>{
 
                         if (indexBannerList[index].linkType == 1) {
                           //传index.url 完整链接 ，bannertype类型为1代表跳转webview
-                          NavigatorUtils.goWebViewPage(context, "webview", indexBannerList[index].linkUrl);
+                          NavigatorUtils.goWebViewPage(context, " ", indexBannerList[index].linkUrl);
                         } else if (indexBannerList[index].linkType == 2) {
                           // String router = indexBannerList[index].router.split('?')[0];
                           String classtype = indexBannerList[index]
