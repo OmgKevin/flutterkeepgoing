@@ -57,6 +57,7 @@ class _FeedBackPageState extends State<FeedBackPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colours.bg_color,
         appBar: MyAppBar(
           centerTitle: "意见反馈",
         ),
@@ -71,7 +72,6 @@ class _FeedBackPageState extends State<FeedBackPage> {
 
   _buildBody() {
     return Container(
-      color: Colours.bg_color,
       child: Column(
         children: <Widget>[
           Container(

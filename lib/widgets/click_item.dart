@@ -46,7 +46,8 @@ class ClickItem extends StatelessWidget {
           //为了数字类文字居中
           crossAxisAlignment: maxLines == 1 ? CrossAxisAlignment.center : CrossAxisAlignment.start,
           children: <Widget>[
-            loadAssetImage(itemicon, height: 20.0, width: 20.0,), // 添加图片设置
+            
+            itemicon != null ? loadAssetImage(itemicon, height: 20.0, width: 20.0,) : Text(''), // 有图片则传图片，无图创建空text
             Gaps.hGap10,
             Text(
               title,

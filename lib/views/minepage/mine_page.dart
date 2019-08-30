@@ -1,13 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
-import 'package:image_cropper/image_cropper.dart';
 
 import 'mine_router.dart';
 
@@ -72,9 +70,12 @@ class _MinePageState extends State<MinePage>
                 top: 60.0,
                 child: Column(
                   children: <Widget>[
-                    SetRoundImage(image: _imageFile
-                        // onTap: ,  点击吊起路由跳转
-                        ),
+                    SetRoundImage(
+                      image: _imageFile,
+                      onTap: () {
+                        NavigatorUtils.push(context, MinePageRouter.accountInfoPage);
+                      },
+                    ),
                     Gaps.vGap8,
                     Text(
                       "IEA精英6303",
@@ -116,7 +117,9 @@ class _MinePageState extends State<MinePage>
         ClickItem(
           title: "设置",
           itemicon: 'mine/3.0x/shezhi',
-          onTap: () {},
+          onTap: () {
+            NavigatorUtils.push(context, MinePageRouter.settingPage);
+          },
         ),
       ],
     ));
@@ -134,5 +137,3 @@ class _MinePageState extends State<MinePage>
     ).then((val) {});
   }
 }
-
- 
