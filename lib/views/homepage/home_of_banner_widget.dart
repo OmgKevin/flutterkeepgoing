@@ -6,7 +6,6 @@ import 'package:flutterkeepgoing/models/homepage_model.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/screen_util.dart';
-import 'package:flutterkeepgoing/widgets/loading.dart';
 
 class HomeOfBannerWidget extends StatefulWidget {
 
@@ -75,14 +74,8 @@ class _HomeOfBannerWidgetState extends State<HomeOfBannerWidget>{
                           NavigatorUtils.goWebViewPage(context, " ", indexBannerList[index].linkUrl);
                         } else if (indexBannerList[index].linkType == 2) {
                           // String router = indexBannerList[index].router.split('?')[0];
-                          String classtype = indexBannerList[index]
-                              .router
-                              .split('?')[1]
-                              .split('=')[0];
-                          String params = indexBannerList[index]
-                              .router
-                              .split('?')[1]
-                              .split('=')[1];
+                          String classtype = indexBannerList[index].router.split('?')[1].split('=')[0];
+                          String params = indexBannerList[index].router.split('?')[1].split('=')[1];
 
                           if (classtype == 'openClassId') {
                             // 传bannertype类型为2代表跳转原生页 ，classtype类型为1代表公开课，传参数openClassId
@@ -99,15 +92,14 @@ class _HomeOfBannerWidgetState extends State<HomeOfBannerWidget>{
                   onTap: () {
                     // print('banner');
                     if (indexBannerList[0].linkType == 1) {
-                      toWebview(
-                        indexBannerList[0].linkUrl,
-                        1,
-                      );
+
+                      toWebview(indexBannerList[0].linkUrl,1,);
+
                     } else if (indexBannerList[0].linkType == 2) {
-                      String classtype =
-                          indexBannerList[0].router.split('?')[1].split('=')[0];
-                      String params =
-                          indexBannerList[0].router.split('?')[1].split('=')[1];
+
+                      String classtype =indexBannerList[0].router.split('?')[1].split('=')[0];
+                      String params =indexBannerList[0].router.split('?')[1].split('=')[1];
+                      
                       if (classtype == 'openClassId') {
                         // 传类型为1 的公开课详情页 ，传参数openClassId
                       } else if (classtype == 'goId') {
