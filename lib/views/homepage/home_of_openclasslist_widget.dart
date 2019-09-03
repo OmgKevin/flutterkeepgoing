@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/blocs/home_of_openclass_bloc.dart';
 import 'package:flutterkeepgoing/models/homepage_model.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
+import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
+import 'package:flutterkeepgoing/util/webview_url_config_util.dart';
 
 
 
@@ -71,7 +73,10 @@ class _HomeOfOpenClassListWidgetState extends State<HomeOfOpenClassListWidget> {
           left: index == 0 ? 17.0 : 4.5,
           right: indexClassList.length - 1 == index ? 17.0 : 4.5),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () async {
+          String webUrl = await fullUrlConfig.fullurl(item.openClassId.toString());
+          NavigatorUtils.goWebViewPage(context, "详情", webUrl);
+        },
         child: Column(
           children: <Widget>[
             ClipRRect(

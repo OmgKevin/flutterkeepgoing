@@ -47,6 +47,8 @@ dependencies:
   image_cropper: ^1.0.2
   # 视频播放 https://pub.dev/packages/chewie
   chewie: ^0.9.7
+  # 手机设备信息 https://pub.dev/packages/device_info#-readme-tab-
+  device_info: ^0.4.0+2
 
 
 dev_dependencies:

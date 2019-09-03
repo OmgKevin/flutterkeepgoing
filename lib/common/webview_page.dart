@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -7,7 +6,6 @@ import 'package:flutterkeepgoing/common/app_bar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewPage extends StatefulWidget {
-
   const WebViewPage({
     Key key,
     @required this.title,
@@ -16,14 +14,14 @@ class WebViewPage extends StatefulWidget {
 
   final String title;
   final String url;
-  
+
   @override
   _WebViewPageState createState() => _WebViewPageState();
 }
 
 class _WebViewPageState extends State<WebViewPage> {
-
-  final Completer<WebViewController> _controller = Completer<WebViewController>();
+  final Completer<WebViewController> _controller =
+      Completer<WebViewController>();
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +30,9 @@ class _WebViewPageState extends State<WebViewPage> {
         builder: (context, snapshot) {
           return WillPopScope(
             onWillPop: () async {
-              if (snapshot.hasData){
+              if (snapshot.hasData) {
                 bool canGoBack = await snapshot.data.canGoBack();
-                if (canGoBack){
+                if (canGoBack) {
                   // 网页可以返回时，优先返回上一页
                   snapshot.data.goBack();
                   return Future.value(false);
@@ -53,11 +51,27 @@ class _WebViewPageState extends State<WebViewPage> {
                   onWebViewCreated: (WebViewController webViewController) {
                     _controller.complete(webViewController);
                   },
-                )
-            ),
-          );
-        }
-    );
-  }
 
+                  ///////添加判断
+                  navigationDelegate: (NavigationRequest request) {
+                    if (request.url.startsWith("myapp://")) {
+                      print("即将打开 ${request.url}");
+                      return NavigationDecision.prevent;
+                    }
+                    return NavigationDecision.navigate;
+                  },
+
+                  javascriptChannels: <JavascriptChannel>[
+                    JavascriptChannel(
+                        name: "JsBridge",
+                        onMessageReceived: (JavascriptMessage message) {
+                          print("参数： ${message.message}");
+                        }),
+                  ].toSet(),
+
+                  ////////////////////////////////
+                )),
+          );
+        });
+  }
 }
