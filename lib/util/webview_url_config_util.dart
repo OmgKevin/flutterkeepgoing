@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 final WebViewUrlConfig fullUrlConfig = new WebViewUrlConfig();
 
 class WebViewUrlConfig {
-
+ 
   fullurl(String urlstring) async {
     String detail = ApiConfig.h5baseurl;
     String openClassId = urlstring;

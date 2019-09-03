@@ -7,7 +7,7 @@ final videoPlayerController = VideoPlayerController.network(
 
 final chewieController = ChewieController(
   videoPlayerController: videoPlayerController,
-  aspectRatio: 1,
+  aspectRatio: 1.8,
   autoPlay: true,
   looping: true,
 );
