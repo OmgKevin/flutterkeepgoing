@@ -49,6 +49,8 @@ dependencies:
   chewie: ^0.9.7
   # 手机设备信息 https://pub.dev/packages/device_info#-readme-tab-
   device_info: ^0.4.0+2
+  # 腾讯视频播放器 https://pub.dev/packages/flt_video_player#-installing-tab-
+  flt_video_player: ^0.0.4
 
 
 dev_dependencies:
