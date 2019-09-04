@@ -5,6 +5,7 @@ import 'package:flutterkeepgoing/util/toast.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
 import 'package:flutterkeepgoing/views/minecoursepage/minecourse_page.dart';
 import 'package:flutterkeepgoing/views/minepage/mine_page.dart';
+import 'package:flutterkeepgoing/widgets/testview.dart';
 
 
 class TabbarController extends StatefulWidget {
@@ -29,7 +30,7 @@ class _TabbarControllerState extends State<TabbarController> {
     _pageList = [
       HomePage(),
       MineCoursePage(),
-      MinePage(),
+      MinePage()
     ];
 
     _tabImages = [

@@ -51,6 +51,8 @@ dependencies:
   device_info: ^0.4.0+2
   # 腾讯视频播放器 https://pub.dev/packages/flt_video_player#-installing-tab-
   flt_video_player: ^0.0.4
+  # iOS屏幕强制横屏 https://pub.dev/packages/orientation#-installing-tab-
+  orientation: ^1.0.5
 
 
 dev_dependencies:

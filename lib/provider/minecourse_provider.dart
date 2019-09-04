@@ -16,6 +16,7 @@ class MineCoursePageProvider extends BaseApiProvider {
        print('------------ $response');
        NavigatorUtils.push(context, MinePageRouter.accountInfoPage);
     }
+    
     return super.verifyMiddleWare(response);
   }
 }
