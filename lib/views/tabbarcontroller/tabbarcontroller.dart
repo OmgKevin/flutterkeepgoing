@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/dimens.dart';
-import 'package:flutterkeepgoing/common/test_widget.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/util/toast.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
-import 'package:flutterkeepgoing/views/loginpage/login_page.dart';
 import 'package:flutterkeepgoing/views/minecoursepage/minecourse_page.dart';
 import 'package:flutterkeepgoing/views/minepage/mine_page.dart';
 
@@ -31,7 +29,6 @@ class _TabbarControllerState extends State<TabbarController> {
     _pageList = [
       HomePage(),
       MineCoursePage(),
-      // WebViewPage(),
       MinePage(),
     ];
 

@@ -50,10 +50,11 @@ class BaseApiProvider {
     onError: (DioError e) {
 
       // token --- 401 需要重新登陆
-      if(e.response != null && e.response.statusCode == 401){
-
-      }
-      return _onError(e);
+      // if(e.response != null && e.response.statusCode == 401){
+      // }
+      // return _onError(e);
+      
+      return _handleError(e);
     }));
   }
 

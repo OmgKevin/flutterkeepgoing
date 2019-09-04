@@ -6,7 +6,6 @@ import 'package:flutterkeepgoing/models/minecourse_model.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
 import 'package:flutterkeepgoing/util/shared_util.dart';
 import 'package:flutterkeepgoing/views/minecoursepage/minecourse_listitem.dart';
-import 'package:flutterkeepgoing/widgets/loading.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
 
 class MineCoursePage extends StatefulWidget {
@@ -46,7 +45,7 @@ class _MineCoursePageState extends State<MineCoursePage>
 
   _getList() {
     Map<String, String> paramsmap = {'id': userid};
-    _bloc.getList(paramsmap);
+    _bloc.getMineCourseList(paramsmap,context);
   }
 
   Future<Null> _refresh() async {

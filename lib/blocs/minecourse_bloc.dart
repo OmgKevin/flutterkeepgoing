@@ -22,10 +22,10 @@ class MineCourseListBloc {
 
 
 
-  void getList (params) {
+  void getMineCourseList (params,context) {
     // 数据异常 => cancel
     _mineCourseListSubcrition?.cancel();
-    _mineCourseListSubcrition = provider.getMineCourseListData(params).asStream().listen((BaseResp data) {
+    _mineCourseListSubcrition = provider.getMineCourseListData(params,context).asStream().listen((BaseResp data) {
       if (data.result) {
         data.data = MineCourseModel.fromJson(data.data);
       }
