@@ -24,6 +24,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   
+ final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
+ 
   MyApp()  {
     final router = Router();
     Routes.configureRoutes(router);
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return OKToast(
       child: MaterialApp(
+        navigatorKey: navigatorKey,
         title: 'Flutter Keep Going',
         // debugShowCheckedModeBanner: false,
         theme: ThemeData(

@@ -7,7 +7,7 @@ class MineCoursePageProvider extends BaseApiProvider {
   *  获取我的课程列表
   * @links
   */
-  Future<BaseResp> getList(Map<String, dynamic> params) async {
+  Future<BaseResp> getMineCourseListData(Map<String, dynamic> params) async {
     final response = await get(NetworkConfig.mineCoursePageApi['getList'], params);
     return super.verifyMiddleWare(response);
   }
