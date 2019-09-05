@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 
 
@@ -43,7 +44,8 @@ class _InputTextPageState extends State<InputTextPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
+    return 
+    Stack(children: <Widget>[
       Theme(
         data: new ThemeData(
             primaryColor: Color(0xFFF6F6F6), hintColor: Color(0xFFF6F6F6)),
@@ -76,7 +78,6 @@ class _InputTextPageState extends State<InputTextPage> {
             )),
       )
     ]);
-
     
   }
 }

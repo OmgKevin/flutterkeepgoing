@@ -71,34 +71,40 @@ class _FeedBackPageState extends State<FeedBackPage> {
   }
 
   _buildBody() {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(left: 20, top: 20, right: 20),
-            child: InputTextPage(
-              focusNode: _nodeText1,
-              controller: _feedbackController,
-              maxLength: 11,
-            ),
+    return GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: () {
+          // 触摸收起键盘
+          FocusScope.of(context).requestFocus(FocusNode());
+        },
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+                child: InputTextPage(
+                  focusNode: _nodeText1,
+                  controller: _feedbackController,
+                  maxLength: 11,
+                ),
+              ),
+              TextFieldItem(
+                title: "联系方式:",
+                hintText: "手机号/微信号",
+                focusNode: _nodeText2,
+                controller: _phoneNumberController,
+              ),
+              Gaps.vGap200,
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 20, right: 20),
+                child: MyButton(
+                  onPressed: _isClick ? _login : null,
+                  // onPressed: (){},
+                  text: "提交反馈",
+                ),
+              ),
+            ],
           ),
-          TextFieldItem(
-            title: "联系方式:",
-            hintText: "手机号/微信号",
-            focusNode: _nodeText2,
-            controller: _phoneNumberController,
-          ),
-          Gaps.vGap200,
-          Container(
-            margin: EdgeInsets.only(left: 20, top: 20, right: 20),
-            child: MyButton(
-              onPressed: _isClick ? _login : null,
-              // onPressed: (){},
-              text: "提交反馈",
-            ),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }

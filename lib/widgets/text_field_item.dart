@@ -43,13 +43,17 @@ class TextFieldItem extends StatelessWidget {
           ),
           Expanded(
             flex: 1,
-            child: TextField(
-              focusNode: focusNode,
-              keyboardType: keyboardType,
-              inputFormatters: _getInputFormatters(),
-              controller: controller,
-              style: TextStyles.textDark14,
-              decoration: new InputDecoration(
+            child: Theme(
+              data: new ThemeData(
+                  primaryColor: Color(0xFFF6F6F6),
+                  hintColor: Color(0xFFF6F6F6)),
+              child: TextField(
+                focusNode: focusNode,
+                keyboardType: keyboardType,
+                inputFormatters: _getInputFormatters(),
+                controller: controller,
+                style: TextStyles.textDark14,
+                decoration: new InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                     borderSide: BorderSide(color: Colors.white),
@@ -63,7 +67,8 @@ class TextFieldItem extends StatelessWidget {
                   hintText: hintText,
                   contentPadding: EdgeInsets.fromLTRB(12, 12, 12, 12),
                   hintStyle: TextStyle(color: Color(0xFF999999)),
-                  ),
+                ),
+              ),
             ),
           ),
           Gaps.hGap16
