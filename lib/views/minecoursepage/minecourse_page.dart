@@ -30,17 +30,23 @@ class _MineCoursePageState extends State<MineCoursePage>
   @override
   void initState() {
     super.initState();
+      
+      _initAsync();
 
-
-       String userauthorization = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdW5MYW5kIiwiYXVkIjoiMTc2MjAzNTYzMDMiLCJpYXQiOjE1NjcxNTExMDQsInN1YiI6IjE3NjIwMzU2MzAzLVtdIiwiZXhwIjoxNTY3MTUxMTA0fQ.H8GUoiFw4p7F1Vgv7b1z0QlgW-oS54u1fy9_Ghzo7oY';
+       String userauthorization = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJTdW5MYW5kIiwiYXVkIjoiMTc2MjAzNTYzMDMiLCJpYXQiOjE1NjgwODExOTAsInN1YiI6IjE3NjIwMzU2MzAzLVtdIiwiZXhwIjoxNTY4MDgxMTkwfQ.mDVzUqzY5ZUVYCY7m6y7aFvwJJxZ6s6AZuZVvBfeIpQ';
        String usera = 'MTc2MjAzNTYzMDM=';
 
-       SharedUtil.instance.saveString(Keys.authorization, userauthorization);
-       SharedUtil.instance.saveString(Keys.a, usera);
+       SpUtil.putString(Keys.authorization, userauthorization);
+       SpUtil.putString(Keys.a, usera);
 
        _getList();
 
     WidgetsBinding.instance.addObserver(this);
+  }
+
+
+  void _initAsync() async {
+    await SpUtil.getInstance();
   }
 
   _getList() {

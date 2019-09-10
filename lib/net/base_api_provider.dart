@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutterkeepgoing/common/key_config.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/date_util.dart';
+import 'package:flutterkeepgoing/util/shared_util.dart';
 import 'package:flutterkeepgoing/util/sign_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,7 +13,6 @@ import 'package:dio/dio.dart';
 
 class BaseApiProvider {
   Dio dio = new Dio();
-  SharedPreferences _sharedPreferences;
 
 
   BaseApiProvider() {
@@ -35,8 +35,10 @@ class BaseApiProvider {
       }
 
       // 缓存获取token
-      String authorization =await _getSharedPerfencesString(Keys.authorization);
-      String a = await _getSharedPerfencesString(Keys.a);
+      await SpUtil.getInstance();
+      String authorization = SpUtil.getString(Keys.authorization);
+      String a = SpUtil.getString(Keys.a);
+
 
       if (null != authorization &&authorization.isNotEmpty &&null != a &&a.isNotEmpty) {
         options.headers['Authorization'] = authorization;
@@ -165,11 +167,4 @@ class BaseApiProvider {
     return completer.future;
   }
 
-  _getSharedPerfencesString(String key) async {
-    if (_sharedPreferences == null) {
-      _sharedPreferences = await SharedPreferences.getInstance();
-    }
-    String account = _sharedPreferences.getString(Keys.account) ?? "default";
-    return _sharedPreferences.get(key + account) ?? "";
-  }
 }
