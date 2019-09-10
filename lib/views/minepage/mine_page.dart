@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/routers/router_init.dart';
-import 'package:flutterkeepgoing/util/device_info_util.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
