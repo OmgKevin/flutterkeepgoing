@@ -9,7 +9,7 @@ class Routes {
   static String home = "/home";
   static String webViewPage = "/webview";
 
-  static List<IRouterProvider> _listRouter = [];
+  static List _listRouter = [];
 
   static void configureRoutes(Router router) {
     /// 指定路由跳转错误返回页

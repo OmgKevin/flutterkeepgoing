@@ -10,14 +10,7 @@ import 'package:flutterkeepgoing/views/minepage/settingpage/setting_page.dart';
 import 'package:flutterkeepgoing/views/tabbarcontroller/tabbarcontroller.dart';
 import 'package:flutterkeepgoing/widgets/videoplayer_widget.dart';
 
-abstract class IRouterProvider{
-  
-  void initRouter(Router router);
-}
-
-
-
-class MyPageRouter implements IRouterProvider{
+class MyPageRouter {
 
   static String tabbarcontorller = "/tabbarcontorller";
   static String homePage = "/home";
@@ -30,7 +23,6 @@ class MyPageRouter implements IRouterProvider{
   static String accountInfoPage = "/mine/accountinfo";
   
   
-  @override
   void initRouter(Router router) {
 
     router.define(tabbarcontorller, handler: Handler(handlerFunc: (_, params) => TabbarController()));

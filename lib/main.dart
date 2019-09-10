@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterkeepgoing/routers/application.dart';
+import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/routers/routers.dart';
 import 'package:flutterkeepgoing/views/splashpage/splash_page.dart';
 import 'package:oktoast/oktoast.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   MyApp()  {
     final router = Router();
     Routes.configureRoutes(router);
-    Application.router = router;
+    NavigatorUtils.router = router;
   }
   
   @override
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         home: SplashPage(),
-        onGenerateRoute: Application.router.generator,  
+        onGenerateRoute: NavigatorUtils.router.generator,  
       ),
       backgroundColor: Colors.black54,
       textPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
