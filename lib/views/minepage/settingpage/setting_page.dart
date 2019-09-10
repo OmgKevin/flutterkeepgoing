@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
 import 'package:flutterkeepgoing/common/colors.dart';
-import 'package:flutterkeepgoing/common/styles.dart';
-import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
-import 'package:flutterkeepgoing/views/minepage/mine_router.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 
 class SettingPage extends StatefulWidget {

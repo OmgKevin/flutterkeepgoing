@@ -2,13 +2,9 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/blocs/home_of_openclass_bloc.dart';
 import 'package:flutterkeepgoing/models/homepage_model.dart';
-import 'package:flutterkeepgoing/net/base_api_config.dart';
 import 'package:flutterkeepgoing/net/base_response.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
-import 'package:flutterkeepgoing/util/device_info_util.dart';
 import 'package:flutterkeepgoing/util/webview_url_config_util.dart';
-import 'package:flutterkeepgoing/views/homepage/home_router.dart';
-import 'package:flutterkeepgoing/views/minepage/mine_router.dart';
 
 class HomeOfOpenClassWidget extends StatefulWidget {
   @override

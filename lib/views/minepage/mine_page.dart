@@ -4,12 +4,11 @@ import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
+import 'package:flutterkeepgoing/routers/router_init.dart';
 import 'package:flutterkeepgoing/util/device_info_util.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
-
-import 'mine_router.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -75,8 +74,7 @@ class _MinePageState extends State<MinePage>
                     SetRoundImage(
                       image: _imageFile,
                       onTap: () {
-                        NavigatorUtils.push(
-                            context, MinePageRouter.accountInfoPage);
+                        NavigatorUtils.push(context,MyPageRouter.accountInfoPage);
                       },
                     ),
                     Gaps.vGap8,
@@ -114,14 +112,14 @@ class _MinePageState extends State<MinePage>
           title: "意见反馈",
           itemicon: 'mine/3.0x/yijian',
           onTap: () {
-            NavigatorUtils.push(context, MinePageRouter.feedbackPage);
+            NavigatorUtils.push(context,MyPageRouter.feedbackPage);
           },
         ),
         ClickItem(
           title: "设置",
           itemicon: 'mine/3.0x/shezhi',
           onTap: () {
-            NavigatorUtils.push(context, MinePageRouter.settingPage);
+            NavigatorUtils.push(context,MyPageRouter.settingPage);
           },
         ),
       ],

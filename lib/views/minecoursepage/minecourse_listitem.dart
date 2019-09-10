@@ -2,7 +2,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/models/minecourse_model.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
-import 'package:flutterkeepgoing/views/minecoursepage/minecourse_router.dart';
+import 'package:flutterkeepgoing/routers/router_init.dart';
 
 
 class MineCourseListItem extends StatefulWidget {
@@ -23,11 +23,10 @@ class _MineCourseListItemState extends State<MineCourseListItem> {
             print('我的课程列表点击');
             if (widget.map.isCourse == 1) {
               showNativeView(1, widget.map.ocId, widget.map.goId);
-            NavigatorUtils.push(context, MineCoursePageRouter.videoPlayerPage);
-
+            NavigatorUtils.push(context,MyPageRouter.videoPlayerPage);
             } else if (widget.map.isCourse == 2) {
               showNativeView(2, widget.map.ocId, widget.map.goId);
-            NavigatorUtils.push(context, MineCoursePageRouter.videoPlayerPage);
+            NavigatorUtils.push(context,MyPageRouter.videoPlayerPage);
             
             }
           },

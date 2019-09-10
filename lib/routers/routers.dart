@@ -4,10 +4,6 @@ import 'package:flutterkeepgoing/common/404.dart';
 import 'package:flutterkeepgoing/common/webview_page.dart';
 import 'package:flutterkeepgoing/routers/router_init.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
-import 'package:flutterkeepgoing/views/homepage/home_router.dart';
-import 'package:flutterkeepgoing/views/minecoursepage/minecourse_router.dart';
-import 'package:flutterkeepgoing/views/minepage/mine_router.dart';
-import 'package:flutterkeepgoing/views/tabbarcontroller/tabbar_router.dart';
 
 class Routes {
   static String home = "/home";
@@ -17,14 +13,12 @@ class Routes {
 
   static void configureRoutes(Router router) {
     /// 指定路由跳转错误返回页
-    router.notFoundHandler = Handler(
-        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+    router.notFoundHandler = Handler(handlerFunc: (BuildContext context, Map<String, List<String>> params) {
       // debugPrint("未找到目标页");
       return WidgetNotFound();
     });
 
-    router.define(home,handler: Handler(handlerFunc:(BuildContext context, Map<String, List<String>> params) =>
-                    HomePage()));
+    router.define(home,handler: Handler(handlerFunc:(BuildContext context, Map<String, List<String>> params) => HomePage()));
 
     router.define(webViewPage, handler: Handler(handlerFunc: (_, params) {
       String title = params['title']?.first;
@@ -33,13 +27,9 @@ class Routes {
     }));
 
     _listRouter.clear();
-
-    /// 各自路由由各自模块管理，统一在此添加初始化
-    _listRouter.add(TabbarRouter());
-    _listRouter.add(HomePageRouter());
-    _listRouter.add(MineCoursePageRouter());
-    _listRouter.add(MinePageRouter());
-
+    
+    // 集中一次性添加路由管理
+    _listRouter.add(MyPageRouter());
 
     /// 初始化路由
     _listRouter.forEach((routerProvider) {

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutterkeepgoing/common/key_config.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
+import 'package:flutterkeepgoing/routers/router_init.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/util/shared_util.dart';
 import 'package:flutterkeepgoing/util/utils.dart';
-import 'package:flutterkeepgoing/views/tabbarcontroller/tabbar_router.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SplashPage extends StatefulWidget {
@@ -61,7 +61,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   _goHomePage() {
-    NavigatorUtils.push(context, TabbarRouter.tabbarcontorller, replace: true);
+    NavigatorUtils.push(context,MyPageRouter.tabbarcontorller, replace: true);
   }
 
   @override

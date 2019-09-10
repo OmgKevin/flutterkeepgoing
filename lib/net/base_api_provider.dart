@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutterkeepgoing/common/key_config.dart';
+import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/util/date_util.dart';
 import 'package:flutterkeepgoing/util/sign_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -51,9 +53,10 @@ class BaseApiProvider {
 
       // token --- 401 需要重新登陆
       // if(e.response != null && e.response.statusCode == 401){
+      //    NavigatorUtils.push(BuildContext,MyPageRouter.accountInfoPage);
       // }
       // return _onError(e);
-      
+               
       return _handleError(e);
     }));
   }

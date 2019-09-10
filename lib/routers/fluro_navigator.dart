@@ -7,7 +7,7 @@ import 'routers.dart';
 /// fluro的路由跳转工具类
 class NavigatorUtils {
   
-  static push(BuildContext context, String path,{bool replace = false, bool clearStack = false}) {
+  static push(BuildContext context,String path,{bool replace = false, bool clearStack = false}) {
     FocusScope.of(context).requestFocus(new FocusNode());
     Application.router.navigateTo(context, path, replace: replace, clearStack: clearStack, transition: TransitionType.native);
   }
@@ -40,6 +40,6 @@ class NavigatorUtils {
   /// 跳到WebView页
   static goWebViewPage(BuildContext context, String title, String url){
     //fluro 不支持传中文,需转换
-    push(context, '${Routes.webViewPage}?title=${Uri.encodeComponent(title)}&url=${Uri.encodeComponent(url)}');
+    push(context,'${Routes.webViewPage}?title=${Uri.encodeComponent(title)}&url=${Uri.encodeComponent(url)}');
   }
 }
