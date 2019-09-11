@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/app_bar.dart';
 import 'package:flutterkeepgoing/common/colors.dart';
+import 'package:flutterkeepgoing/util/fluro_convert_util.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 
 class SettingPage extends StatefulWidget {
@@ -36,7 +37,8 @@ class _SettingPageState extends State<SettingPage> {
         // )
         body: Container(
           child: Text(
-            widget.message,
+            //fluro 接收到中文字符串后的解码展示
+            FluroConvertUtils.fluroCnParamsDecode(widget.message),
           ),
         ),
         );

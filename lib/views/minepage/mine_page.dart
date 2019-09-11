@@ -119,7 +119,9 @@ class _MinePageState extends State<MinePage>
           title: "设置",
           itemicon: 'mine/3.0x/shezhi',
           onTap: () {
-             NavigatorUtils.push(context,'${MyPageRouter.settingPage}?message=teststring');
+             //fluro 传递中文字符串前的编码
+             String chstr = FluroConvertUtils.fluroCnParamsEncode('你好');
+             NavigatorUtils.push(context,'${MyPageRouter.settingPage}?message=$chstr');
           },
         ),
       ],

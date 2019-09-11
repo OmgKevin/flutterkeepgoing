@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutterkeepgoing/routers/application.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/routers/routers.dart';
 import 'package:flutterkeepgoing/views/splashpage/splash_page.dart';

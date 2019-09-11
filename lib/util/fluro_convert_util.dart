@@ -1,8 +1,8 @@
 import 'dart:convert';
-
+// fluro 不支持中文传递
 /// fluro 参数编码解码工具类
 class FluroConvertUtils {
-  /// fluro 传递中文参数前，先转换，fluro 不支持中文传递
+  /// fluro 传递中文参数前，先转换，
   static String fluroCnParamsEncode(String originalCn) {
     StringBuffer sb = StringBuffer();
     var encoded = Utf8Encoder().convert(originalCn);

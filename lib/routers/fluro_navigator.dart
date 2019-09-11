@@ -1,6 +1,5 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterkeepgoing/routers/application.dart';
 import 'routers.dart';
 
 /// fluro的路由跳转工具类
