@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterkeepgoing/common/styles.dart';
 import 'package:flutterkeepgoing/routers/fluro_navigator.dart';
 import 'package:flutterkeepgoing/routers/router_init.dart';
+import 'package:flutterkeepgoing/util/fluro_convert_util.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
@@ -118,7 +119,7 @@ class _MinePageState extends State<MinePage>
           title: "设置",
           itemicon: 'mine/3.0x/shezhi',
           onTap: () {
-             NavigatorUtils.push(context,'${MyPageRouter.settingPage}?string=测试字符串');
+             NavigatorUtils.push(context,'${MyPageRouter.settingPage}?message=teststring');
           },
         ),
       ],

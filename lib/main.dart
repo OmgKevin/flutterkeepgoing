@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   MyApp()  {
     final router = Router();
     Routes.configureRoutes(router);
-    Application.router = router;
+    NavigatorUtils.router = router;
   }
   
   @override
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         home: SplashPage(),
-        onGenerateRoute: Application.router.generator,  
+        onGenerateRoute: NavigatorUtils.router.generator,  
       ),
       backgroundColor: Colors.black54,
       textPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
