@@ -10,7 +10,14 @@ import 'package:flutterkeepgoing/views/minepage/settingpage/setting_page.dart';
 import 'package:flutterkeepgoing/views/tabbarcontroller/tabbarcontroller.dart';
 import 'package:flutterkeepgoing/widgets/videoplayer_widget.dart';
 
-class MyPageRouter {
+
+abstract class IRouterProvider{
+  
+  void initRouter(Router router);
+}
+
+
+class MyPageRouter implements IRouterProvider{
 
   static String tabbarcontorller = "/tabbarcontorller";
   static String homePage = "/home";
@@ -32,7 +39,10 @@ class MyPageRouter {
     router.define(videoPlayerPage, handler: Handler(handlerFunc: (_, params) => VideoPlayerWidget()));
     router.define(minePage, handler: Handler(handlerFunc: (_, params) => MinePage()));
     router.define(feedbackPage, handler: Handler(handlerFunc: (_, params) => FeedBackPage()));
-    router.define(settingPage, handler: Handler(handlerFunc: (_, params) => SettingPage()));
+    router.define(settingPage, handler: Handler(handlerFunc: (_, params){
+     String string = params['string']?.first;
+     SettingPage(message: string);
+    }));
     router.define(accountInfoPage, handler: Handler(handlerFunc: (_, params) => AccountInfoPage()));
 
   }

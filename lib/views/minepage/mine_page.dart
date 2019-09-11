@@ -118,7 +118,7 @@ class _MinePageState extends State<MinePage>
           title: "设置",
           itemicon: 'mine/3.0x/shezhi',
           onTap: () {
-            NavigatorUtils.push(context,MyPageRouter.settingPage);
+             NavigatorUtils.push(context,'${MyPageRouter.settingPage}?string=测试字符串');
           },
         ),
       ],
