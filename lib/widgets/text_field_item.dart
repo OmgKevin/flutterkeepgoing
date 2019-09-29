@@ -66,6 +66,7 @@ class TextFieldItem extends StatelessWidget {
                   fillColor: Colors.white,
                   filled: true,
                   hintText: hintText,
+                  counterText: '', // 去掉可输入字数显示
                   contentPadding: EdgeInsets.fromLTRB(12, 12, 12, 12),
                   hintStyle: TextStyle(color: Color(0xFF999999)),
                 ),
