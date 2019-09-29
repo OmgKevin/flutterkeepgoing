@@ -48,6 +48,7 @@ class TextFieldItem extends StatelessWidget {
                   primaryColor: Color(0xFFF6F6F6),
                   hintColor: Color(0xFFF6F6F6)),
               child: TextField(
+                maxLength: 11,
                 focusNode: focusNode,
                 keyboardType: keyboardType,
                 inputFormatters: _getInputFormatters(),
