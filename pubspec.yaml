@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^0.1.2
   # 事件总线  https://pub.dev/packages/event_bus
   event_bus: ^1.1.0
@@ -53,7 +52,8 @@ dependencies:
   flt_video_player: ^0.0.4
   # iOS屏幕强制横屏 https://pub.dev/packages/orientation#-installing-tab-
   orientation: ^1.0.5
-
+  # 自定义弹出键盘  https://github.com/diegoveloper/flutter_keyboard_actions/
+  # keyboard_actions: ^2.1.2
 
 dev_dependencies:
   flutter_test:
