@@ -54,7 +54,10 @@ dependencies:
   orientation: ^1.0.5
   # 自定义弹出键盘  https://github.com/diegoveloper/flutter_keyboard_actions/
   # keyboard_actions: ^2.1.2
-
+  # 极验行为验证  https://github.com/Joker-388/flutter-geetest
+  flutter_geetest:
+    git: https://github.com/Joker-388/flutter-geetest.git
+ 
 dev_dependencies:
   flutter_test:
     sdk: flutter
