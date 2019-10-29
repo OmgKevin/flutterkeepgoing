@@ -9,6 +9,7 @@ import 'package:flutterkeepgoing/util/fluro_convert_util.dart';
 import 'package:flutterkeepgoing/util/image_utils.dart';
 import 'package:flutterkeepgoing/widgets/click_item.dart';
 import 'package:flutterkeepgoing/widgets/progress_dialog.dart';
+import 'package:flutter_geetest/flutter_geetest.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -74,7 +75,8 @@ class _MinePageState extends State<MinePage>
                     SetRoundImage(
                       image: _imageFile,
                       onTap: () {
-                        NavigatorUtils.push(context,MyPageRouter.accountInfoPage);
+                        NavigatorUtils.push(
+                            context, MyPageRouter.accountInfoPage);
                       },
                     ),
                     Gaps.vGap8,
@@ -101,7 +103,8 @@ class _MinePageState extends State<MinePage>
                       ],
                     ),
                     onTap: () {
-                      _showServiceDialog();
+                      // _showServiceDialog(); // 默认功能点
+                      _launchGeetest3(); // 展示出极验功能的Test
                     },
                   ))
             ],
@@ -112,16 +115,17 @@ class _MinePageState extends State<MinePage>
           title: "意见反馈",
           itemicon: 'mine/3.0x/yijian',
           onTap: () {
-            NavigatorUtils.push(context,MyPageRouter.feedbackPage);
+            NavigatorUtils.push(context, MyPageRouter.feedbackPage);
           },
         ),
         ClickItem(
           title: "设置",
           itemicon: 'mine/3.0x/shezhi',
           onTap: () {
-             //fluro 传递中文字符串前的编码
-             String chstr = FluroConvertUtils.fluroCnParamsEncode('你好');
-             NavigatorUtils.push(context,'${MyPageRouter.settingPage}?message=$chstr');
+            //fluro 传递中文字符串前的编码
+            String chstr = FluroConvertUtils.fluroCnParamsEncode('你好');
+            NavigatorUtils.push(
+                context, '${MyPageRouter.settingPage}?message=$chstr');
           },
         ),
       ],
@@ -144,7 +148,23 @@ class _MinePageState extends State<MinePage>
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     var data = await deviceInfo.iosInfo;
     String identifier = data.identifierForVendor;
-    print('Running on $identifier'); 
+    print('Running on $identifier');
+  }
 
+  /// api1+api2
+  void _launchGeetest3() {
+    FlutterGeetest.launchGeetest(
+      api1: 'https://www.geetest.com/demo/gt/register-slide',
+      api2: 'https://www.geetest.com/demo/gt/validate-slide',
+    ).then((data) {
+      print('Flutter_GeetestPlugin: data====>$data');
+      if (data["data"] == null) {
+        String errormsg = data["msg"];
+        // _showSnackbarMsg('$errormsg');
+        return;
+      }
+      var result = data["data"];
+      // _showSnackbarMsg('$result');
+    });
   }
 }

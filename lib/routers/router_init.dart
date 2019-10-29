@@ -2,6 +2,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutterkeepgoing/views/homepage/home_page.dart';
 import 'package:flutterkeepgoing/views/homepage/openclasspage/openclass_page.dart';
+import 'package:flutterkeepgoing/views/loginpage/login_page.dart';
 import 'package:flutterkeepgoing/views/minecoursepage/minecourse_page.dart';
 import 'package:flutterkeepgoing/views/minepage/accountinfopage/accountinfo_page.dart';
 import 'package:flutterkeepgoing/views/minepage/feedbackpage/feedback_page.dart';
@@ -13,6 +14,7 @@ import 'package:flutterkeepgoing/widgets/videoplayer_widget.dart';
 class MyPageRouter {
   
   static String tabbarcontorller = "/tabbarcontorller";
+  static String loginPage = "/home/login";
   static String homePage = "/home";
   static String openClassPage = "/home/openclass";
   static String mineCoursePage = "/minecourse";
@@ -27,6 +29,7 @@ class MyPageRouter {
   void initRouter(Router router) {
 
     router.define(tabbarcontorller, handler: Handler(handlerFunc: (_, params) => TabbarController()));
+    router.define(loginPage, handler: Handler(handlerFunc: (_, params) => Login()));
     router.define(homePage, handler: Handler(handlerFunc: (_, params) => HomePage()));
     router.define(openClassPage, handler: Handler(handlerFunc: (_, params) => OpenClassPage()));
     router.define(mineCoursePage, handler: Handler(handlerFunc: (_, params) => MineCoursePage()));

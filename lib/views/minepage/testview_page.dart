@@ -8,7 +8,6 @@ import 'package:flutterkeepgoing/util/toast.dart';
 
 
 // 自定义键盘弹出区域 
-
 class CustomKeyboardPage extends StatefulWidget {
   CustomKeyboardPage({Key key}) : super(key: key);
 
