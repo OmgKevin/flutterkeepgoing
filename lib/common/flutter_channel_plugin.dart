@@ -54,7 +54,7 @@ class FlutterChannelPlugin {
     await _methodchannel.invokeMethod('homepage', {'link': link, 'bannertype': bannertype});
   }
 
-  // 若需从调用方法这里获取到同步获取返回值
+  // 若需从调用方法这里获取到同步获取返回值 （这种方式可以直接获取到，不用eventchannel通道主动传值）
   // 在原生侧，直接利用  result(@"fweer"); 返回值
   static Future<String> toStringPageback(String link, int bannertype) async {
    var resultData = await _methodchannel.invokeMethod('homepage', {'link': link, 'bannertype': bannertype});
