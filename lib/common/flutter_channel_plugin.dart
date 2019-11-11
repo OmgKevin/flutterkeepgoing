@@ -1,5 +1,6 @@
 
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class FlutterChannelPlugin {
@@ -52,5 +53,13 @@ class FlutterChannelPlugin {
   static Future<void> toAdPage(String link, int bannertype) async {
     await _methodchannel.invokeMethod('homepage', {'link': link, 'bannertype': bannertype});
   }
+
+  // 若需从调用方法这里获取到同步获取返回值
+  // 在原生侧，直接利用  result(@"fweer"); 返回值
+  static Future<String> toStringPageback(String link, int bannertype) async {
+   var resultData = await _methodchannel.invokeMethod('homepage', {'link': link, 'bannertype': bannertype});
+   return json.decode(resultData);
+  }
+
 }
 
