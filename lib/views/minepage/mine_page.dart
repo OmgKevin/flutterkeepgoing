@@ -50,7 +50,7 @@ class _MinePageState extends State<MinePage>
       case AppLifecycleState.resumed:
         print('AppLifecycleState.resumed');
         break;
-      case AppLifecycleState.suspending:
+      case AppLifecycleState.detached:
         print('AppLifecycleState.suspending');
         break;
     }
@@ -61,7 +61,7 @@ class _MinePageState extends State<MinePage>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-        body: Column(
+     body: Column(
       children: <Widget>[
         AspectRatio(
           aspectRatio: 1.5, // 16:9 宽高占比
